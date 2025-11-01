@@ -76,7 +76,7 @@
       const userId = await getAuthUserId(ctx)
 
       if (!userId) {
-        return []
+        throw new Error("Unauthorized")
       }
 
       const member = await ctx.db
@@ -90,14 +90,14 @@
         throw new Error("Unauthorized")
       }
 
-      const parsedName = args.name.replace(/\s+/g, "-").toLocaleLowerCase()
+      const parsedName = args.name.replace(/\s+/g, "-").toLowerCase();
 
       const channelId = await ctx.db.insert("channels", {
         name: parsedName,
         workspaceId: args.workspaceId
       })
 
-      return channelId
+      return channelId;
     }
   })
 
