@@ -47,7 +47,7 @@ export const UserButton = () => {
             <LogOutIcon className="size-4 text-destructive" />
           </div>
           <div className="text-destructive text-base font-medium">
-            Encerrar sessão
+            Encerrar sessão agora
           </div>
         </DropdownMenuItem>
       </DropdownMenuContent>

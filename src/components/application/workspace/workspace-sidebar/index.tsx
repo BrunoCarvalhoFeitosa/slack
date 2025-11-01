@@ -52,14 +52,13 @@ export const WorkspaceSidebar = () => {
       />
       <div className="mt-3 px-4 flex flex-col gap-y-1">
         <SidebarItem
-          label="Threads"
-          icon={MessageSquareTextIcon}
-          id="threads"
-        />
-        <SidebarItem
           label="Mensagens"
           icon={SendHorizonalIcon}
           id="messages"
+          members={members}
+          openMessage={openMessage}
+          setOpenMessage={setOpenMessage}
+          onNewMessage={() => setOpenMessage(true)}
         />
         <WorkspaceSection
           label="Canais"
@@ -74,6 +73,7 @@ export const WorkspaceSidebar = () => {
                 icon={HashIcon}
                 label={item.name}
                 variant={channelId === item._id ? "active" : "default"}
+                isLink
               />
             ))}
           </div>

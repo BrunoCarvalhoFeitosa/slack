@@ -34,7 +34,7 @@ interface WorkspaceSectionProps {
   workspaceId?: Id<"workspaces">
   members?: PopulatedMember[]
   openMessage?: boolean
-  setOpenMessage?: (open: boolean) => void
+  setOpenMessage?: (openMessage: boolean) => void
   onNewChannel?: () => void
   onNewMessage?: () => void
 }

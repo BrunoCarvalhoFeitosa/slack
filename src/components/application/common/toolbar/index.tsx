@@ -5,6 +5,9 @@ import { useWorkspaceId } from "@/hooks/use-workspace-id"
 import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace"
 import { useGetChannels } from "@/features/channels/api/use-get-channels"
 import { useGetMembers } from "@/features/members/api/use-get-members"
+import Link from "next/link"
+import { Hint } from "../hint"
+import { SlackLogoText } from "@/components/common/slack-logo-text"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command"
@@ -33,7 +36,11 @@ export const Toolbar = () => {
   return (
     <div className="w-full bg-primary">
       <nav className="p-1.5 h-[60px] flex justify-between items-center">
-        <div className="flex-1" />
+        <div className="flex-1 ml-2">
+          <Link href="/application">
+            <SlackLogoText width="120" height="35" labelColor="#fff" showLabel />
+          </Link>
+        </div>
         <div className="min-w-[280px] max-[642px] grow-[2] shrink">
           <Button
             type="button"
@@ -41,8 +48,8 @@ export const Toolbar = () => {
             onClick={() => setOpen(true)}
           >
             <SearchIcon className="size-5 text-white" />
-            <span>
-              Buscar em {data?.name}
+            <span className="text-base">
+              Buscar canais ou conversas em {data?.name}
             </span>
           </Button>
           <CommandDialog open={open} onOpenChange={setOpen}>
@@ -75,13 +82,24 @@ export const Toolbar = () => {
             </CommandList>
           </CommandDialog>
         </div>
-        <div className="ml-auto flex flex-1 justify-end items-center">
-          <Button
-            type="button"
-            variant="ghost"
+        <div className="ml-auto pr-2 flex flex-1 justify-end items-center">
+          <Hint
+            label="Verificar status de funcionamento"
+            align="center"
+            side="left"
           >
-            <InfoIcon className="size-5 text-white" />
-          </Button>
+            <Button
+              asChild
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="px-0!"
+            >
+              <Link href="https://slack-status.com">
+                <InfoIcon className="size-5 text-white" />
+              </Link>
+            </Button>
+          </Hint>
         </div>
       </nav>
     </div>
