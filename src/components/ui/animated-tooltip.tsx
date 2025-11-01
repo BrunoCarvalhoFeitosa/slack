@@ -27,13 +27,13 @@ export const AnimatedTooltip = ({
     springConfig,
   )
 
-  const handleMouseMove = (event: any) => {
+  function handleMouseMove<T extends HTMLElement>(event: React.MouseEvent<T>) {
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current)
     }
 
     animationFrameRef.current = requestAnimationFrame(() => {
-      const halfWidth = event.target.offsetWidth / 2
+      const halfWidth = event.currentTarget.offsetWidth / 2
       x.set(event.nativeEvent.offsetX - halfWidth)
     })
   }

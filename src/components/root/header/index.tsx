@@ -45,7 +45,7 @@ export const Header = ({ isFixed }: HeaderProps) => {
                   <ul className="grid gap-2 w-full min-w-[270px] md:w-[400px] lg:w-[600px] lg:grid-cols-[1fr_1fr]">
                     <li className="row-span-4">
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
                           href="/"
                         >
@@ -55,7 +55,7 @@ export const Header = ({ isFixed }: HeaderProps) => {
                           <p className="text-muted-foreground text-sm leading-tight">
                             O Slack é uma plataforma de comunicação e colaboração voltada principalmente para equipes e ambientes de trabalho. Seu principal objetivo é facilitar a troca de informações e a organização do trabalho em grupo.
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <ListItem href="/" title="Canais">

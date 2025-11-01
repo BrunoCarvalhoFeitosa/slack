@@ -11,6 +11,16 @@ interface EmojiPopoverProps {
   onOpenChange?: (open: boolean) => void
 }
 
+type EmojiData = {
+  activeSkinTone: string
+  emoji: string
+  imageUrl: string
+  names: Array<string>
+  isCustom: boolean
+  unified: string
+  unifiedWithoutSkinTone: string
+}
+
 export const EmojiPopover = ({
   children,
   hint = "Emoji",
@@ -25,7 +35,7 @@ export const EmojiPopover = ({
     onOpenChange?.(open)
   }
 
-  const onSelect = (emojiData: any) => {
+  const onSelect = (emojiData: EmojiData) => {
     onEmojiSelect(emojiData.emoji)
     setPopoverOpen(false)
     onOpenChange?.(false)
