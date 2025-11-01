@@ -31,7 +31,7 @@ export const Header = ({ isFixed }: HeaderProps) => {
       <div className="flex items-center gap-3">
         <div>
           <Link href="/">
-            <SlackLogoText width="130" height="40" labelColor="#111" showLabel />
+            <SlackLogoText width="130" height="40" labelColor="#fff" showLabel />
           </Link>
         </div>
         <div>
