@@ -77,7 +77,7 @@ const JoinPage = () => {
       <Link href="/application">
         <SlackLogoText width="150" height="50" showLabel />
       </Link>
-      <div className="max-w-md flex flex-col gap-y-4 justify-center items-center">
+      <div className="max-w-md lg:max-w-lg flex flex-col gap-y-4 justify-center items-center">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-2xl font-bold">
             Junte-se ao espaço de trabalho {data?.name}
