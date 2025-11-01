@@ -10,10 +10,10 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import { FolderIcon, Loader2Icon, PlusIcon } from "lucide-react"
 
 export const WorkspaceSwitcher = () => {
-  const [open, setOpen] = useCreateWorkspaceModal()
+  const [_open, setOpen] = useCreateWorkspaceModal()
   const workspaceId = useWorkspaceId()
   const router = useRouter()
-  const { data: workspaces, isLoading: workspacesLoading } = useGetWorkspaces()
+  const { data: workspaces } = useGetWorkspaces()
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({ id: workspaceId })
 
   const filteredWorkspaces = workspaces?.filter(

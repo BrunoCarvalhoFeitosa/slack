@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import { VerifiedIcon } from "../../icons/verified"
-import { TbBrandWindowsFilled, TbBrandTiktokFilled, TbBrandTinderFilled, TbBrandSnapchatFilled, TbBrandYoutubeFilled, TbBrandBitbucketFilled, TbBrandDiscordFilled, TbBrandOperaFilled, TbBrandPaypalFilled, TbBrandPinterestFilled, TbBrandStripeFilled, TbBrandWhatsappFilled, TbBrandAppleFilled, TbBrandFacebookFilled, TbBrandKickFilled, TbBrandGithubFilled, TbBrandSpotifyFilled, TbBrandVimeoFilled, TbBrandXFilled, TbBrandAngularFilled, TbBrandGoogle, TbBrandGoogleFilled, TbBrandNetflix, TbBrandDribbbleFilled, TbBrandGitlab, TbBrandFlutter, TbBrandFigma, TbBrandEnvato, TbBrandPatreonFilled, TbBrandSwift, TbBrandVscode, TbBrandTumblrFilled } from "react-icons/tb"
+import { TbBrandWindowsFilled, TbBrandTiktokFilled, TbBrandTinderFilled, TbBrandSnapchatFilled, TbBrandYoutubeFilled, TbBrandBitbucketFilled, TbBrandDiscordFilled, TbBrandOperaFilled, TbBrandPaypalFilled, TbBrandPinterestFilled, TbBrandStripeFilled, TbBrandWhatsappFilled, TbBrandAppleFilled, TbBrandFacebookFilled, TbBrandKickFilled, TbBrandGithubFilled, TbBrandSpotifyFilled, TbBrandVimeoFilled, TbBrandXFilled, TbBrandAngularFilled, TbBrandGoogleFilled, TbBrandNetflix, TbBrandDribbbleFilled, TbBrandGitlab, TbBrandFlutter, TbBrandFigma, TbBrandEnvato, TbBrandPatreonFilled, TbBrandSwift, TbBrandVscode, TbBrandTumblrFilled } from "react-icons/tb"
 
 export const TestimonialSection = () => {
   return (

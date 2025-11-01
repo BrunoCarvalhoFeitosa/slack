@@ -64,7 +64,7 @@ export const ChannelHeader = ({ title }: ChannelHeaderProps) => {
       id: channelId,
       name
     }, {
-      onSuccess: (id) => {
+      onSuccess: () => {
         toast("Nome do canal atualizado com sucesso.", {
           description: getDate(),
           classNames: {
@@ -107,7 +107,7 @@ export const ChannelHeader = ({ title }: ChannelHeaderProps) => {
     removeChannel({
       id: channelId
     }, {
-      onSuccess: (id) => {
+      onSuccess: () => {
         toast("Canal deletado com sucesso.", {
           description: getDate(),
           classNames: {

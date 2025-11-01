@@ -15,7 +15,7 @@ import { toast } from "sonner"
 import { Message } from "../common/messages/message"
 import { Button } from "@/components/ui/button"
 import { formatDateLabel, TIME_THRESHOLD } from "@/utils"
-import { AlertTriangleIcon, Loader2Icon, XIcon } from "lucide-react"
+import { Loader2Icon, XIcon } from "lucide-react"
 import { Alert } from "../common/alert"
 const Editor = dynamic(() => import("@/components/application/common/editor"), { ssr: false })
 
@@ -109,6 +109,8 @@ export const Threads = ({ messageId, onClose }: ThreadProps) => {
   
       setEditorKey((prevKey) => prevKey + 1)
     } catch (error) {
+      console.error("Error while send message", error)
+
       toast.error("Erro ao enviar mensagem.", {
         classNames: {
           description: "text-gray-700!"

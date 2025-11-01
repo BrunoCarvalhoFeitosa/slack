@@ -17,11 +17,12 @@ export const WorkspaceSidebar = () => {
   const workspaceId = useWorkspaceId()
   const channelId = useChannelId()
   const memberId = useMemberId()
+  const currentMember = useCurrentMember({ workspaceId })
   const [_open, setOpen] = useCreateChannelModal()
   const { data: member, isLoading: memberLoading } = useCurrentMember({ workspaceId })
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({ id: workspaceId })
-  const { data: channels, isLoading: channelsLoading } = useGetChannels({ workspaceId })
-  const { data: members, isLoading: membersLoading } = useGetMembers({ workspaceId })
+  const { data: channels } = useGetChannels({ workspaceId })
+  const { data: members } = useGetMembers({ workspaceId })
 
   if (memberLoading || workspaceLoading) {
     return (
@@ -79,7 +80,7 @@ export const WorkspaceSidebar = () => {
         <WorkspaceSection
           label="Mensagens diretas"
           hint="Nova mensagem direta"
-          onNew={() => {}}
+          onNew={currentMember?.data?.role === "admin" ? () => setOpen(true) : undefined}
         >
           <div className="mt-2 px-3 flex flex-col gap-y-2">
             {members?.map((member) => (

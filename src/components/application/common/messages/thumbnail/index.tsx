@@ -1,6 +1,5 @@
-// "use client"
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import Image from "next/image"
+"use client"
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
 
 interface ThumbnailProps {
   url: string | null | undefined

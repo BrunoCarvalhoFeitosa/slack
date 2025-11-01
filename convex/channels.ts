@@ -90,14 +90,14 @@
         throw new Error("Unauthorized")
       }
 
-      const parsedName = args.name.replace(/\s+/g, "-").toLowerCase();
+      const parsedName = args.name.replace(/\s+/g, "-").toLowerCase()
 
       const channelId = await ctx.db.insert("channels", {
         name: parsedName,
         workspaceId: args.workspaceId
       })
 
-      return channelId;
+      return channelId
     }
   })
 
@@ -142,19 +142,19 @@
 
   export const remove = mutation({
     args: {
-      id: v.id("channels")
+      id: v.id("channels"),
     },
     handler: async (ctx, args) => {
       const userId = await getAuthUserId(ctx)
 
       if (!userId) {
-        return []
+        throw new Error("Unauthorized")
       }
 
       const channel = await ctx.db.get(args.id)
 
       if (!channel) {
-        throw new Error("Channel not found")
+        return null
       }
 
       const member = await ctx.db
@@ -171,10 +171,8 @@
       const [messages] = await Promise.all([
         ctx.db
           .query("messages")
-          .withIndex(
-            "by_channel_id", (q) => q.eq("channelId", args.id)
-          )
-          .collect()
+          .withIndex("by_channel_id", (q) => q.eq("channelId", args.id))
+          .collect(),
       ])
 
       for (const message of messages) {

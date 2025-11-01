@@ -1,7 +1,6 @@
 "use client"
-import { SlackLogoText } from "@/components/common/slack-logo-text"
 import Link from "next/link"
-import { FaLinkedinIn, FaFacebookSquare, FaYoutube, FaTiktok } from "react-icons/fa"
+import { FaFacebookSquare, FaYoutube } from "react-icons/fa"
 import { PiInstagramLogoFill } from "react-icons/pi"
 
   export const Footer = () => {

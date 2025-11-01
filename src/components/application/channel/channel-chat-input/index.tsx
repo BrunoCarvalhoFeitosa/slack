@@ -75,6 +75,8 @@ export const ChannelChatInput = ({ placeholder }: ChannelChatInputProps) => {
   
       setEditorKey((prevKey) => prevKey + 1)
     } catch (error) {
+      console.error("Error while send message", error)
+
       toast.error("Erro ao enviar mensagem.", {
         classNames: {
           description: "text-gray-700!"

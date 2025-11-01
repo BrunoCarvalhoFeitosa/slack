@@ -1,7 +1,6 @@
 "use client"
 import { SlackLogoText } from "@/components/common/slack-logo-text"
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 const NotFound = () => {

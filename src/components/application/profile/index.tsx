@@ -15,7 +15,7 @@ import { Alert } from "../common/alert"
 import { Button } from "@/components/ui/button"
 import { ProfileHeader } from "./profile-header"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuRadioGroup, DropdownMenuItem, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu"
 import { Separator } from "@/components/ui/separator"
 import { getDate } from "@/utils"
 import { ChevronDownIcon, MailIcon } from "lucide-react"
@@ -227,6 +227,7 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
                     type="button"
                     variant="outline"
                     className="flex-1 capitalize"
+                    disabled={updatingMember}
                   >
                     {member.role === "member" ? "Membro" : "Admin"} <ChevronDownIcon className="size-4" />
                   </Button>
@@ -249,6 +250,7 @@ export const Profile = ({ memberId, onClose }: ProfileProps) => {
                 type="button"
                 variant="outline"
                 className="flex-1"
+                disabled={removingMember}
                 onClick={onRemove}
               >
                 Remover

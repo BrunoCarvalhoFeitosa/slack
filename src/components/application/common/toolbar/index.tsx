@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { useWorkspaceId } from "@/hooks/use-workspace-id"
 import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace"
@@ -7,7 +7,7 @@ import { useGetChannels } from "@/features/channels/api/use-get-channels"
 import { useGetMembers } from "@/features/members/api/use-get-members"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "@/components/ui/command"
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command"
 import { InfoIcon, SearchIcon } from "lucide-react"
 
 export const Toolbar = () => {
