@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { useCreateChannelModal } from "@/features/channels/store/use-create-channel"
 import { useCurrentMember } from "@/features/members/api/use-current-member"
 import { useGetWorkspace } from "@/features/workspaces/api/use-get-workspace"
@@ -17,8 +18,8 @@ export const WorkspaceSidebar = () => {
   const workspaceId = useWorkspaceId()
   const channelId = useChannelId()
   const memberId = useMemberId()
-  const currentMember = useCurrentMember({ workspaceId })
   const [_open, setOpen] = useCreateChannelModal()
+  const [openMessage, setOpenMessage] = useState<boolean>(false)
   const { data: member, isLoading: memberLoading } = useCurrentMember({ workspaceId })
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({ id: workspaceId })
   const { data: channels } = useGetChannels({ workspaceId })
@@ -63,7 +64,7 @@ export const WorkspaceSidebar = () => {
         <WorkspaceSection
           label="Canais"
           hint="Novo canal"
-          onNew={member.role === "admin" ? () => setOpen(true) : undefined}
+          onNewChannel={member.role === "admin" ? () => setOpen(true) : undefined}
         >
           <div className="mt-1 px-3">
             {channels?.map((item) => (
@@ -80,7 +81,11 @@ export const WorkspaceSidebar = () => {
         <WorkspaceSection
           label="Mensagens diretas"
           hint="Nova mensagem direta"
-          onNew={currentMember?.data?.role === "admin" ? () => setOpen(true) : undefined}
+          members={members}
+          workspaceId={workspaceId}
+          openMessage={openMessage}
+          setOpenMessage={setOpenMessage}
+          onNewMessage={() => setOpenMessage(true)}
         >
           <div className="mt-2 px-3 flex flex-col gap-y-2">
             {members?.map((member) => (
