@@ -107,7 +107,7 @@ Primeiramente será necessário clonar este projeto em (https://github.com/Bruno
 
 1. Clone o repositório
    ```sh
-   git clone https://github.com/BrunoCarvalhoFeitosa/slack
+   git clone https://github.com/BrunoCarvalhoFeitosa/slack.git
    ```
 2. Instale os pacotes do NPM
    ```sh
