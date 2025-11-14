@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/BrunoCarvalhoFeitosa/jira">
+  <a href="https://github.com/BrunoCarvalhoFeitosa/slack">
     <img src="\public\root\images\logo.png" alt="Logo" width="90" weight="90" />
   </a>
 
